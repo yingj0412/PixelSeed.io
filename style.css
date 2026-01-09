@@ -1,0 +1,290 @@
+/* === 기본 설정 === */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif; /* 더 세련된 폰트로 변경 권장 */
+    color: white;
+    overflow-x: hidden;
+}
+
+body.index-page {
+    overflow: hidden; /* 메인 페이지 스크롤 방지 */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+/* === 배경 처리 === */
+.main-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/main-background.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    filter: brightness(0.9); /* 배경을 약간 어둡게 하여 글자 가독성 확보 */
+}
+
+/* === 메인 UI 레이어 (전체 화면 그리드) === */
+.ui-layer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 40px 60px; /* 전체 여백 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 상단과 하단으로 분리 */
+}
+
+/* 반응형 여백 조정 */
+@media (max-width: 768px) {
+    .ui-layer {
+        padding: 20px;
+    }
+}
+
+/* === 1. 상단 영역 (로고 + 언어) === */
+.brand-area {
+    position: absolute;
+    top: 40px;
+    left: 60px;
+}
+
+#company-name {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.lang-area {
+    position: absolute;
+    top: 40px;
+    right: 60px;
+}
+
+.lang-switcher {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    background: rgba(255, 255, 255, 0.1); /* 유리 효과 */
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    padding: 5px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.lang-switcher li {
+    margin: 0 5px;
+}
+
+.lang-btn {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: rgba(255,255,255,0.6);
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+.lang-btn.active {
+    background-color: white;
+    color: black;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* === 2. 하단 영역 (스토어 + 메뉴) === */
+/* 요소를 절대 위치로 배치하여 자유도 높임 */
+
+/* 스토어 아이콘 (좌측 하단) */
+.store-area {
+    position: absolute;
+    bottom: 60px;
+    left: 60px;
+}
+
+.store-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    opacity: 0.8;
+}
+
+.store-btn:hover {
+    opacity: 1;
+    transform: translateY(-5px); /* 살짝 위로 떠오르는 효과 */
+}
+
+.download-text {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    color: #ccc;
+    font-weight: 300;
+}
+
+.store-btn img {
+    width: 160px;
+    height: auto;
+    filter: drop-shadow(0 5px 5px rgba(0,0,0,0.5));
+}
+
+/* 메인 메뉴 (우측 하단) */
+.bottom-menu-area {
+    position: absolute;
+    bottom: 60px;
+    right: 60px;
+    text-align: right;
+}
+
+#center-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+#center-menu li {
+    margin-left: 15px;
+}
+
+#center-menu a {
+    font-size: 1.2rem;
+    font-weight: 300;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+/* 메뉴 밑줄 애니메이션 */
+#center-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    right: 0; /* 오른쪽에서 왼쪽으로 참 */
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+#center-menu a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.separator {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.4);
+}
+
+/* === 모바일 반응형 조정 === */
+@media (max-width: 768px) {
+    .brand-area { top: 30px; left: 30px; }
+    .lang-area { top: 30px; right: 30px; }
+    
+    .store-area { 
+        bottom: 100px; /* 메뉴 위로 올림 */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+    }
+    
+    .store-btn {
+        align-items: center; /* 중앙 정렬 */
+    }
+
+    .bottom-menu-area {
+        bottom: 40px;
+        right: 0;
+        left: 0;
+        text-align: center;
+    }
+
+    #center-menu {
+        justify-content: center;
+    }
+    
+    #company-name { font-size: 2rem; }
+}
+
+
+/* === Privacy Page 스타일 (기존 유지하되 헤더만 모던하게 수정) === */
+.privacy-page {
+    overflow: auto !important;
+    background: #f9f9f9;
+    color: #333;
+}
+
+/* Privacy용 헤더 재정의 */
+.privacy-page header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 40px;
+    background-color: rgba(255, 255, 255, 0.95); /* 흰색 배경으로 변경 */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.privacy-page nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.privacy-page nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.privacy-page nav a {
+    color: #333; /* 검은 글씨 */
+    font-weight: 600;
+    margin-right: 20px;
+}
+
+.privacy-page .lang-switcher {
+    border: 1px solid #ddd; /* 테두리 변경 */
+    background: transparent;
+}
+
+.privacy-page .lang-btn {
+    color: #888;
+}
+
+.privacy-page .lang-btn.active {
+    background: #333;
+    color: white;
+}
+
+.privacy-container {
+    max-width: 800px;
+    margin: 100px auto 50px auto; /* 헤더 공간 확보 */
+    padding: 20px;
+    line-height: 1.8;
+}
+
+.privacy-container h1, .privacy-container strong {
+    color: #222;
+}
