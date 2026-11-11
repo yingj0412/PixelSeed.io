@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // ▼▼▼ 이 부분이 수정되었습니다 ▼▼▼
     // (수정) menuItems 선택자에 #center-menu a 추가
-    const menuItems = document.querySelectorAll('#main-menu a, #center-menu a'); 
+    const menuItems = document.querySelectorAll('[data-lang-ko][data-lang-en]'); 
     // ▲▲▲ 여기까지 ▲▲▲
 
     // 언어 변경 함수 (변경 없음)

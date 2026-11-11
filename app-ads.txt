@@ -1,5 +1,6 @@
 google.com, pub-7847434801690232, DIRECT, f08c47fec0942fa0
 
+#unity
 ignitemediatech.com, pub_11115, RESELLER
 improvedigital.com, 2297, RESELLER
 improvedigital.com, 2464, RESELLER
@@ -123,7 +124,7 @@ google.com, pub-2923085774557613, RESELLER, f08c47fec0942fa0
 google.com, pub-5060663379040713, RESELLER, f08c47fec0942fa0
 google.com, pub-3990748024667386, RESELLER, f08c47fec0942fa0
 
-
+#mintegral
 mintegral.com, 75734, DIRECT, 0aeed750c80d6423
 pokkt.com, 7139, RESELLER, c45702d9311e25fd
 appads.in, 107139, RESELLER
@@ -1063,6 +1064,7 @@ growone.sg, 108b7d5328f7442cd7e19c4463d7ff8d, RESELLER
 bigo.sg, q9hk29ki8d, RESELLER
 pubnative.net, 1018294, RESELLER, d641df8625486a7b
 
+#pangle
 OwnerDomain=pixelseed.co.kr
 pangleglobal.com, 5044393, DIRECT
 
